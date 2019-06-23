@@ -21,7 +21,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-countlabel="*res://Label.gd"
+Speed2="*res://Speed2.gd"
 
 [display]
 
