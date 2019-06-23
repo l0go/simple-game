@@ -3,9 +3,9 @@
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
-[ext_resource path="res://onlymeith_-_Mana_Junkie.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Brick.tscn" type="PackedScene" id=4]
 [ext_resource path="res://brickspawner.gd" type="Script" id=5]
-[ext_resource path="res://Brick.tscn" type="PackedScene" id=6]
+[ext_resource path="res://onlymeith_-_Mana_Junkie.ogg" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
@@ -27,6 +27,7 @@ texture = ExtResource( 3 )
 shape = SubResource( 1 )
 
 [node name="Walls" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( -32, 576 )
 
 [node name="Wall" type="StaticBody2D" parent="Walls"]
@@ -169,11 +170,50 @@ position = Vector2( 578, 0 )
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Walls/Wall28"]
 shape = SubResource( 1 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
-autoplay = true
+[node name="Bricks" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Brick" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 96, 320 )
+
+[node name="Brick2" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 192, 96 )
+
+[node name="Brick5" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 288, -288 )
+
+[node name="Brick6" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 64, -384 )
+
+[node name="Brick7" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 448, -416 )
+
+[node name="Brick8" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 64, -128 )
+
+[node name="Brick9" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 384, -96 )
+
+[node name="Brick10" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 96, -608 )
+
+[node name="Brick11" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 416, -736 )
+
+[node name="Brick12" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 96, -960 )
+
+[node name="Brick13" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 288, -960 )
+
+[node name="Brick3" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 384, 256 )
+
+[node name="Brick4" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 448, 128 )
 
 [node name="spawners" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="brickspawner" type="Node2D" parent="spawners"]
 position = Vector2( 32, -32 )
@@ -211,46 +251,9 @@ script = ExtResource( 5 )
 position = Vector2( 480, 0 )
 script = ExtResource( 5 )
 
-[node name="Bricks" type="Node" parent="."]
-
-[node name="Brick" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 96, 320 )
-
-[node name="Brick2" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 192, 96 )
-
-[node name="Brick5" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 288, -288 )
-
-[node name="Brick6" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 64, -384 )
-
-[node name="Brick7" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 448, -416 )
-
-[node name="Brick8" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 64, -128 )
-
-[node name="Brick9" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 384, -96 )
-
-[node name="Brick10" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 96, -608 )
-
-[node name="Brick11" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 416, -736 )
-
-[node name="Brick12" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 96, -960 )
-
-[node name="Brick13" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 288, -960 )
-
-[node name="Brick3" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 384, 256 )
-
-[node name="Brick4" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 448, 128 )
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
 
 [node name="Label" type="Label" parent="."]
 margin_right = 40.0

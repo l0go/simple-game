@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Star.gd" type="Script" id=1]
+[ext_resource path="res://Star-Collisions.gd" type="Script" id=2]
+[ext_resource path="res://color_star_12.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 23.0011
+
+[node name="Star" type="KinematicBody2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Star-Collisions" type="Area2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Star-Collisions"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Star-Collisions"]
+scale = Vector2( 0.114, 0.114 )
+texture = ExtResource( 3 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="Star-Collisions"]
+amount = 50
+emission_shape = 3
+emission_points = PoolVector2Array(  )
+emission_colors = PoolColorArray(  )
+flag_align_y = true
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 17.7
+scale_amount = 2.0
