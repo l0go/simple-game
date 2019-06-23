@@ -4,4 +4,4 @@ func _physics_process(delta):
     for body in bodies:
         if body.name == "Player":
             queue_free()
-            Speed2.score += 1000
+            Speed2.score += 100
